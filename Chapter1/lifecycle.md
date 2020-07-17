@@ -1,45 +1,8 @@
 # asset_absbond(弃用)
-字段名|类型|默认值|备注
---|:--:|--:|--:
-id|||			
-transaction_name|||			
-transaction_code|||			
-value_date|||			
-maturity_date|||			
-notional|||			
-accrual_rate|||			
-accrual_type|||			
-accrual_method|||			
-frequency|||			
-repayment_type|||			
-note|||
 ---
 # asset_flow(弃用)
-字段名|类型|默认值|备注
---|:--:|--:|--:			
-asset_type|||				
-direction|||				
-amount|||				
-asset_name|||				
-id|||				
-value_start_date|||				
-value_end_date|||				
-payment_date|||		
 ---
 # asset_loan(弃用)
-字段名|类型|默认值|备注
---|:--:|--:|--:				
-id|||		
-transaction_name|||			
-counterparty|||			
-direction|||			
-value_date|||			
-maturity_date|||			
-notional|||			
-fixed_interest_rate|||			
-value_method|||			
-accrual	|||		
-note|||	
 ---
 # cash(产品-兑付状态)
 字段名|类型|默认值|备注
