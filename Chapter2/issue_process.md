@@ -2,76 +2,76 @@
 
 | 字段名                  |     类型     | 默认值 | 备注 |
 | ----------------------- | :----------: | -----: | ---: |
-| sub_company_code        | varchar(100) |        |
-| sub_company_name        | varchar(250) |        |
-| branch_id               | varchar(100) |        |
-| branch_code             | varchar(100) |        |
-| branch_name             | varchar(250) |        |
-| sub_branch_code         | varchar(100) |        |
-| sub_branch_name         | varchar(250) |        |
-| dept_code               | varchar(100) |        |
-| dept_name               | varchar(250) |        |
-| city_id                 | varchar(100) |        |
-| city_name               | varchar(250) |        |
-| sub_branch_full_name    | varchar(250) |        |
-| sub_compamy_leader      | varchar(100) |        |
-| sub_branch_leader       | varchar(100) |        |
-| manager_sub_branch_code | varchar(100) |        |
-| manager_sub_branch_name | varchar(250) |        |
+| sub_company_code        | varchar(100) |      - |    - |
+| sub_company_name        | varchar(250) |      - |    - |
+| branch_id               | varchar(100) |      - |    - |
+| branch_code             | varchar(100) |      - |    - |
+| branch_name             | varchar(250) |      - |    - |
+| sub_branch_code         | varchar(100) |      - |    - |
+| sub_branch_name         | varchar(250) |      - |    - |
+| dept_code               | varchar(100) |      - |    - |
+| dept_name               | varchar(250) |      - |    - |
+| city_id                 | varchar(100) |      - |    - |
+| city_name               | varchar(250) |      - |    - |
+| sub_branch_full_name    | varchar(250) |      - |    - |
+| sub_compamy_leader      | varchar(100) |      - |    - |
+| sub_branch_leader       | varchar(100) |      - |    - |
+| manager_sub_branch_code | varchar(100) |      - |    - |
+| manager_sub_branch_name | varchar(250) |      - |    - |
 
 ---
 
 # # dept_product(机构-产品 关联表)
 
-| 字段名        | 类型 | 默认值 | 备注 |
-| ------------- | :--: | -----: | ---: |
-| department_id |      |        |
-| product_code  |      |        |
-| issued_at     |      |        |
+| 字段名        | 类型 | 默认值 |     备注 |
+| ------------- | :--: | -----: | -------: |
+| department_id |      |        |  部门 id |
+| product_code  |      |        | 产品代码 |
+| issued_at     |      |        | 发行场所 |
 
 ---
 
 # # doc_no(协编码表)
 
-| 字段名       | 类型 | 默认值 |     备注 |
-| ------------ | :--: | -----: | -------: |
-| id           |      |        |     主键 |
-| doc_id       |      |        |  文档 id |
-| doc_no       |      |        | 协议编码 |
-| sending_date |      |        | 发送日期 |
-| issue_date   |      |        |   认购日 |
+| 字段名       |     类型     | 默认值 |     备注 |
+| ------------ | :----------: | -----: | -------: |
+| id           |     int4     |        |     主键 |
+| doc_id       |     int4     |        |  文档 id |
+| doc_no       | varchar(200) |        | 协议编码 |
+| sending_date |     date     |        | 发送日期 |
+| issue_date   |     date     |        |   认购日 |
 
 ---
 
 # # document_history(文档历史表)
 
-| 字段名          | 类型 | 默认值 |     备注 |
-| --------------- | :--: | -----: | -------: |
-| id              |      |        |
-| product_code    |      |        | 产品代码 |
-| document_type   |      |        | 文档类型 |
-| document_data   |      |        | 文档内容 |
-| document_name   |      |        | 文档名称 |
-| document_flag   |      |        | 是否更新 |
-| create_date     |      |        | 创建日期 |
-| creator         |      |        |   创建者 |
-| document_remark |      |        | 上传备注 |
+| 字段名          |     类型     | 默认值 |     备注 |
+| --------------- | :----------: | -----: | -------: |
+| id              |     int4     |        |     主键 |
+| product_code    | varchar(50)  |        | 产品代码 |
+| document_type   | varchar(50)  |        | 文档类型 |
+| document_data   |    bytea     |        | 文档内容 |
+| document_name   | varchar(100) |        | 文档名称 |
+| document_flag   |     int4     |        | 是否更新 |
+| create_date     | timestamp(6) |        | 创建日期 |
+| creator         | varchar(50)  |        |   创建者 |
+| document_remark | varchar(255) |        | 上传备注 |
 
 ---
 
 # # documentation(产品-文档表)
 
-| 字段名          | 类型 | 默认值 | 备注 |
-| --------------- | :--: | -----: | ---: |
-| id              |      |        |
-| product_code    |      |        |
-| document_type   |      |        |
-| document_data   |      |        |
-| document_name   |      |        |
-| document_flag   |      |        |
-| create_date     |      |        |
-| creator         |      |        |
-| document_remark |      |        |
+| 字段名          |     类型     | 默认值 |     备注 |
+| --------------- | :----------: | -----: | -------: |
+| id              |     int4     |        |     主键 |
+| product_code    | varchar(50)  |        | 产品代码 |
+| document_type   | varchar(50)  |        | 文档类型 |
+| document_data   |    bytea     |        | 文档内容 |
+| document_name   | varchar(100) |        | 文档名称 |
+| document_flag   |     int4     |        | 是否更新 |
+| create_date     | timestamp(6) |        | 创建时间 |
+| creator         | varchar(50)  |        |   创建者 |
+| document_remark | varchar(255) |        | 上传备注 |
 
 ---
 
@@ -85,38 +85,51 @@
 
 ## options(产品-期权要素表)
 
-| 字段名                             |   类型    | 默认值 |                备注 |
-| ---------------------------------- | :-------: | -----: | ------------------: |
-| id                                 |   int4    |        |                主键 |
-| product_code                       |  varchar  |        |            产品代码 |
-| underlying_instrument_id           |  varchar  |        |            标的代码 |
-| underlying_instrument              |  varchar  |        |            挂钩标的 |
-| option_style                       |  varchar  |        |            期权结构 |
-| participation_rate                 |  float8   |        |              参与率 |
-| option_premium_rate                |  float8   |        |            期权费率 |
-| buy_sell                           |  varchar  |        |            买卖方向 |
-| counterparty                       |  varchar  |        |            交易对手 |
-| put_call                           |  varchar  |        |          标的物方向 |
-| initial_observation_date           | timestamp |        |          期初观察日 |
-| initial_price_observation_rule     |  varchar  |        |        期初价格描述 |
-| final_observation_date             | timestamp |        |          期末观察日 |
-| end_price_observation_rule         |  varchar  |        |        期末价格描述 |
-| observation_duration               |  varchar  |        |        价格观察区间 |
-| participation_rate_1               |  float8   |        |            参与率 1 |
-| strike_price_calculation_method_1  |  varchar  |        | 执行价格 1 匹配方式 |
-| strike_price_calculation_factor_1  |  float8   |        |          执行价格 1 |
-| barrier_price_calculation_method_1 |  varchar  |        | 障碍价格 1 匹配方式 |
-| barrier_price_calculation_factor_1 |  float8   |        |          障碍价格 1 |
-| knock_out_rebate_1                 |  float8   |        |          敲出补偿 1 |
-| participation_rate_2               |  float8   |        |            参与率 2 |
-| strike_price_calculation_method_2  |  varchar  |        | 执行价格 2 匹配方式 |
-| strike_price_calculation_factor_2  |  float8   |        |          执行价格 2 |
-| barrier_price_calculation_method_2 |  varchar  |        | 障碍价格 2 匹配方式 |
-| barrier_price_calculation_factor_2 |  float8   |        |          障碍价格 2 |
-| knock_out_rebate_2                 |  float8   |        |          敲出补偿 2 |
-| rounding                           |   int4    |        |      标的价格精确度 |
-| yield                              |  varchar  |        |      收益率（描述） |
-| trading_calendar                   |  varchar  |        |            交易日历 |
+| 字段名                             |     类型     | 默认值 |                备注 |
+| ---------------------------------- | :----------: | -----: | ------------------: |
+| id                                 |     int4     |        |                主键 |
+| product_code                       |   varchar    |        |            产品代码 |
+| underlying_instrument_id           |   varchar    |        |            标的代码 |
+| underlying_instrument              |   varchar    |        |            挂钩标的 |
+| option_style                       |   varchar    |        |            期权结构 |
+| participation_rate                 |    float8    |        |              参与率 |
+| option_premium_rate                |    float8    |        |            期权费率 |
+| buy_sell                           |   varchar    |        |            买卖方向 |
+| counterparty                       |   varchar    |        |            交易对手 |
+| put_call                           |   varchar    |        |          标的物方向 |
+| initial_observation_date           |  timestamp   |        |          期初观察日 |
+| initial_price_observation_rule     |   varchar    |        |        期初价格描述 |
+| final_observation_date             |  timestamp   |        |          期末观察日 |
+| end_price_observation_rule         |   varchar    |        |        期末价格描述 |
+| observation_duration               |   varchar    |        |        价格观察区间 |
+| participation_rate_1               |    float8    |        |            参与率 1 |
+| strike_price_calculation_method_1  |   varchar    |        | 执行价格 1 匹配方式 |
+| strike_price_calculation_factor_1  |    float8    |        |          执行价格 1 |
+| barrier_price_calculation_method_1 |   varchar    |        | 障碍价格 1 匹配方式 |
+| barrier_price_calculation_factor_1 |    float8    |        |          障碍价格 1 |
+| knock_out_rebate_1                 |    float8    |        |          敲出补偿 1 |
+| participation_rate_2               |    float8    |        |            参与率 2 |
+| strike_price_calculation_method_2  |   varchar    |        | 执行价格 2 匹配方式 |
+| strike_price_calculation_factor_2  |    float8    |        |          执行价格 2 |
+| barrier_price_calculation_method_2 |   varchar    |        | 障碍价格 2 匹配方式 |
+| barrier_price_calculation_factor_2 |    float8    |        |          障碍价格 2 |
+| knock_out_rebate_2                 |    float8    |        |          敲出补偿 2 |
+| rounding                           |     int4     |        |      标的价格精确度 |
+| yield                              |   varchar    |        |      收益率（描述） |
+| trading_calendar                   |   varchar    |        |            交易日历 |
+| knock_out_observation_date         | varchar(255) |        |          敲出观察日 |
+| underlying_instrument_id2          | varchar(255) |        |          标的代码 2 |
+| underlying_instrument2             | varchar(255) |        |          挂钩标的 2 |
+| trading_calendar2                  | varchar(255) |        |          交易日历 2 |
+| knock_out_json                     |    jsonb     |        |      敲出观察日管理 |
+| knock_in_json                      |    jsonb     |        |      敲入观察日管理 |
+| knock_out_price                    | varchar(255) |        |            敲出价格 |
+| knock_out_calculation_method       | varchar(255) |        |    敲出价格匹配方式 |
+| knock_in_calculation_method        | varchar(255) |        |    敲入价格匹配方式 |
+| knock_in_price                     |    float8    |        |            敲入价格 |
+| options_remarks                    | varchar(255) |        |        期权扩展信息 |
+| knock_out_observation_rule         | varchar(255) |        |    敲出价格匹配方式 |
+| knock_in_observation_rule          | varchar(255) |        |    敲入价格匹配方式 |
 
 ---
 
@@ -276,19 +289,19 @@
 | 字段名           |  类型   | 默认值 |                   备注 |
 | ---------------- | :-----: | -----: | ---------------------: |
 | product_code     | varchar |        |               产品代码 |
-| status           |  int4   |        |
-| path             |  text   |        |
-| path_action      |  int4   |        |
-| check_point      | varchar |        |
-| created          |  bool   |        |
-| dept_path        |  int4   |        |
-| predefined_steps |  text   |        |
-| step             | varchar |        |
-| step_role        |  jsonb  |        |
-| pending          |  bool   |        |
+| status           |  int4   |        |               发行状态 |
+| path             |  text   |        |             审批指定人 |
+| path_action      |  int4   |        |                      - |
+| check_point      | varchar |        |           审批指定角色 |
+| created          |  bool   |        |                        |
+| dept_path        |  int4   |     {} |                      - |
+| predefined_steps |  text   |        |           发行流程步骤 |
+| step             | varchar |        |             现阶段步骤 |
+| step_role        |  jsonb  |        |         现阶段步骤汇总 |
+| pending          |  bool   |        |                      - |
 | reqcode          | varchar |        |               需求代码 |
-| auditremark      | varchar |        |
-| issue_status     |  bool   |        |
+| auditremark      | varchar |        |               审批信息 |
+| issue_status     |  bool   |        |                      - |
 | remark           | varchar |        |                   备注 |
 | extsystem        | varchar |        | 1.固收；2.权益（产金） |
 
@@ -452,10 +465,10 @@
 
 ## sended_file_type()
 
-| 字段名       | 类型 | 备注 | 默认值 |
-| ------------ | :--: | ---: | -----: |
-| product_code |      |      |
-| file_type    |      |      |
+| 字段名       | 类型 | 备注 |   默认值 |
+| ------------ | :--: | ---: | -------: |
+| product_code |      |      | 产品代码 |
+| file_type    |      |      | 文档类型 |
 
 ---
 
@@ -553,7 +566,7 @@
 | knock_in_json                     |    jsonb     |          |                     敲入观察日管理 |
 | knock_in_calculation_method       | varchar(255) |          |                   敲入价格匹配方式 |
 | knock_in_price                    |    float8    |          |                           敲入价格 |
-| knock_out_observation_rule        |              |          |                       敲出价格描述 |
-| knock_in_observation_rule         |              |          |                       敲入价格描述 |
+| knock_out_observation_rule        | varchar(255) |          |                       敲出价格描述 |
+| knock_in_observation_rule         | varchar(255) |          |                       敲入价格描述 |
 | principal_protection_rate         |    float8    |          |                       本金保障比例 |
 | options_remarks                   | varchar(255) |          |                       期权扩展信息 |

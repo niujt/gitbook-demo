@@ -6,8 +6,8 @@
 | department         | varchar(50) |                                         |   部门名称 |
 | department_group   | varchar(50) |                                         |     部门组 |
 | products_group     | varchar(50) |                                         | 产品代码组 |
-| issuers            |  integer[]  |                                      {} |
-| prerequisite_depts |  integer[]  |                                      {} |
+| issuers            |  integer[]  |                                      {} |          - |
+| prerequisite_depts |  integer[]  |                                      {} |          - |
 
 ---
 
@@ -28,7 +28,7 @@
 | role          | varchar |        |               权限名称 |
 | visit         | varchar |        |              用户组 id |
 | resource      |  jsonb  |        | 资源（可以访问的页面） |
-| permission    |  int4   |        |
+| permission    |  int4   |        |                     ｜ |
 | department_id |  int4   |        |                部门 id |
 | role_name     | varchar |        |               权限名称 |
 
@@ -49,6 +49,6 @@
 
 ### 表涉及的 sequence 序列
 
-1.  departments_id_seq
-2.  role_id_seq
-3.  users_id_seq
+1. departments_id_seq
+2. role_id_seq
+3. users_id_seq

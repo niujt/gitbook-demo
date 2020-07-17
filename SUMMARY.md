@@ -32,4 +32,4 @@
         * [market_data](Chapter2/market_data.md)
         * [report](Chapter2/report.md)
         * [sales](Chapter2/sales.md)
-        * [schema](Chapter2/schema.md)
+        * [schedule](Chapter2/schema.md)

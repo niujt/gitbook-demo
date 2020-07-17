@@ -19,29 +19,31 @@
 
 # pro_customer_maturity(大数据推送表-到期日推送)
 
-| 字段名           |     类型     | 默认值 |         备注 |
-| ---------------- | :----------: | -----: | -----------: |
-| product_code     | varchar(100) |        |     产品代码 |
-| customer_code    | varchar(100) |        |     客户代码 |
-| branch_code      | varchar(100) |        | 分支机构代码 |
-| raise_amount     |    float8    |        |     销售份额 |
-| first_issue_date |  timestamp   |        |       到期日 |
-| create_date      |  timestamp   |        |     创建日期 |
-| update_date      |  timestamp   |        |     更新日期 |
+| 字段名             |     类型     | 默认值 |         备注 |
+| ------------------ | :----------: | -----: | -----------: |
+| product_code       | varchar(100) |        |     产品代码 |
+| customer_code      | varchar(100) |        |     客户代码 |
+| branch_code        | varchar(100) |        | 分支机构代码 |
+| raise_amount       |    float8    |        |     销售份额 |
+| first_issue_date   |  timestamp   |        |       到期日 |
+| create_date        |  timestamp   |        |     创建日期 |
+| update_date        |  timestamp   |        |     更新日期 |
+| customer_full_name | varchar(255) |        |     客户全称 |
 
 ---
 
 # pro_customer_subscription(大数据推送表-认购日推送)
 
-| 字段名           |     类型     | 默认值 |         备注 |
-| ---------------- | :----------: | -----: | -----------: |
-| product_code     | varchar(100) |        |     产品代码 |
-| customer_code    | varchar(100) |        |     客户代码 |
-| branch_code      | varchar(100) |        | 分支机构代码 |
-| raise_amount     |    float8    |        |     销售份额 |
-| first_issue_date |  timestamp   |        |       认购日 |
-| create_date      |  timestamp   |        |     创建日期 |
-| update_date      |  timestamp   |        |     更新日期 |
+| 字段名             |     类型     | 默认值 |         备注 |
+| ------------------ | :----------: | -----: | -----------: |
+| product_code       | varchar(100) |        |     产品代码 |
+| customer_code      | varchar(100) |        |     客户代码 |
+| branch_code        | varchar(100) |        | 分支机构代码 |
+| raise_amount       |    float8    |        |     销售份额 |
+| first_issue_date   |  timestamp   |        |       认购日 |
+| create_date        |  timestamp   |        |     创建日期 |
+| update_date        |  timestamp   |        |     更新日期 |
+| customer_full_name | varchar(255) |        |     客户全称 |
 
 ---
 

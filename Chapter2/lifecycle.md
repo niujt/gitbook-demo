@@ -1,56 +1,16 @@
 # asset_absbond(弃用)
 
-| 字段名           | 类型 | 默认值 | 备注 |
-| ---------------- | :--: | -----: | ---: |
-| id               |      |        |
-| transaction_name |      |        |
-| transaction_code |      |        |
-| value_date       |      |        |
-| maturity_date    |      |        |
-| notional         |      |        |
-| accrual_rate     |      |        |
-| accrual_type     |      |        |
-| accrual_method   |      |        |
-| frequency        |      |        |
-| repayment_type   |      |        |
-| note             |      |        |
-
 ---
 
 # asset_flow(弃用)
-
-| 字段名           | 类型 | 默认值 | 备注 |
-| ---------------- | :--: | -----: | ---: |
-| asset_type       |      |        |
-| direction        |      |        |
-| amount           |      |        |
-| asset_name       |      |        |
-| id               |      |        |
-| value_start_date |      |        |
-| value_end_date   |      |        |
-| payment_date     |      |        |
 
 ---
 
 # asset_loan(弃用)
 
-| 字段名              | 类型 | 默认值 | 备注 |
-| ------------------- | :--: | -----: | ---: |
-| id                  |      |        |
-| transaction_name    |      |        |
-| counterparty        |      |        |
-| direction           |      |        |
-| value_date          |      |        |
-| maturity_date       |      |        |
-| notional            |      |        |
-| fixed_interest_rate |      |        |
-| value_method        |      |        |
-| accrual             |      |        |
-| note                |      |        |
-
 ---
 
-# cash(产品-兑付状态)
+# cash(产品-兑付状态 弃用)
 
 | 字段名       |  类型   | 默认值 |     备注 |
 | ------------ | :-----: | -----: | -------: |
@@ -61,98 +21,146 @@
 
 # contracts(负债管理-收益凭证表)
 
-| 字段名                             |        类型         | 默认值 |                 备注 |
-| ---------------------------------- | :-----------------: | -----: | -------------------: |
-| id                                 |       integer       |        |                 主键 |
-| product_code                       |     varchar(25)     |        |             产品代码 |
-| product_source                     |     varchar(25)     |        |                 来源 |
-| product_description                |     varchar(50)     |        |             产品全称 |
-| product_short_description          |     varchar(20)     |        |             产品简称 |
-| value_date                         |      timestamp      |        |               起息日 |
-| maturity_date                      |      timestamp      |        |               到期日 |
-| initial_observation_date           |      timestamp      |        |           期初观察日 |
-| initial_price_observation_rule     |    varchar(500)     |        |         期初价格描述 |
-| final_observation_date             |      timestamp      |        |           期末观察日 |
-| end_price_observation_rule         |    varchar(500)     |        |         期末价格描述 |
-| rounding                           |       integer       |        |       标的价格精确度 |
-| fixed_interest_rate                |       float8        |        |             固定利率 |
-| min_raise_amount                   |       float8        |        |             募集下限 |
-| max_raise_amount                   |       float8        |        |             募集上限 |
-| subscription_date                  |      timestamp      |        |               认购日 |
-| redmption_date                     |      timestamp      |        |               兑付日 |
-| underlying_instrument              |     varchar(20)     |        |             标的名称 |
-| product_duration                   |       integer       |        |                 期限 |
-| put_call                           |     varchar(8)      |        |                 方向 |
-| option_style                       |     varchar(20)     |        |             期权结构 |
-| participation_rate                 |       float8        |        |               参与率 |
-| option_permium_rate                |       float8        |        |             期权费率 |
-| buy_sell                           |     varchar(8)      |        |             买卖方向 |
-| counterparty                       |     varchar(30)     |        |             交易对手 |
-| participation_rate_1               |       float8        |        |             参与率 1 |
-| strike_price_calculation_factor_1  |       float8        |        |           执行价格 1 |
-| strike_price_calculation_method_1  |     varchar(50)     |        |  执行价格 1 匹配方式 |
-| barrier_price_calculation_factor_1 |       float8        |        |           障碍价格 1 |
-| barrier_price_calculation_method_1 |     varchar(50)     |        |  障碍价格 1 匹配方式 |
-| knock_out_rebate_1                 |       float8        |        |           敲出补偿 1 |
-| participation_rate_2               |       float8        |        |             参与率 2 |
-| strike_price_calculation_factor_2  |       float8        |        |           执行价格 2 |
-| strike_price_calculation_method_2  |     varchar(50)     |        |  执行价格 2 匹配方式 |
-| barrier_price_calculation_factor_2 |       float8        |        |           障碍价格 2 |
-| barrier_price_calculation_method_2 |     varchar(50)     |        |  障碍价格 2 匹配方式 |
-| knock_out_rebate_2                 |       float8        |        |           敲出补偿 2 |
-| underlying_instrument_id           |    varchar(100)     |        |             标的代码 |
-| holder_type                        |    varchar(100)     |        |             发行方式 |
-| actual_amount_collected            |       float8        |        |         实际募集金额 |
-| commission_rate                    |       float8        |        |             销售费率 |
-| individual_min_subscribe_amount    |       float8        |        |       单客户认购下限 |
-| institutional_min_subscribe_amount |       float8        |        | 机构首次投资最低金额 |
-| individual_min_transfer_amount     |       float8        |        |         认购递增金额 |
-| institutional_min_transfer_amount  |       float8        |        |     机构最少追加金额 |
-| individual_max_subscribe_amount    |       float8        |        |       单客户认购上限 |
-| institutional_max_subscribe_amount |       float8        |        |     机构最高认购限额 |
-| match_option                       | character varying[] |        |           不清楚用途 |
-| branch_name                        |    varchar(100)     |        |         分支机构名称 |
-| branch_code                        |    varchar(100)     |        |         分支机构代码 |
-| customer_name                      |    varchar(100)     |        |             客户名称 |
-| contact_name                       |    varchar(100)     |        |               联系人 |
-| sales_associates                   |    varchar(100)     |        |           销售协同人 |
-| sales_name                         |    varchar(300)     |        |     分支机构预约同事 |
-| note                               |    varchar(500)     |        |           中收备忘录 |
-| observation_duration               |    varchar(500)     |        |         价格观察区间 |
-| has_gened_csv                      |       boolean       |        |   是否生成全资产文件 |
-| initial_price                      |       float8        |        | 期初价格（没有用到） |
-| holder_type2                       |    varchar(200)     |        |          定制/非定制 |
-| istripartite                       |     varchar(20)     |        |             发行渠道 |
-| excessallot                        |     varchar(50)     |        |       超额认申购判断 |
-| activitycode                       |    varchar(255)     |        |             活动代码 |
-| issharewithdrawal                  |     varchar(50)     |        |         是否支持撤单 |
-| issharetransfer                    |     varchar(50)     |        |         是否支持转让 |
-| accountname                        |    varchar(200)     |        |             账户名称 |
-| bank                               |    varchar(200)     |        |               开户行 |
-| accountnum                         |    varchar(200)     |        |                 账号 |
-| bigpayaccountnum                   |    varchar(200)     |        |     大额支付系统行号 |
-| certificate_type                   |    varchar(200)     |        |             证件类型 |
-| certificate_num                    |    varchar(200)     |        |             证件号码 |
-| legal_person                       |    varchar(200)     |        |           法定代表人 |
-| address                            |    varchar(300)     |        |             通讯地址 |
-| email                              |    varchar(200)     |        |             电子邮箱 |
-| capital_accountname                |    varchar(200)     |        |     资金结算账户名称 |
-| capital_accountnum                 |    varchar(200)     |        |         资金结算账号 |
-| remarks                            |    varchar(255)     |        |                 备注 |
-| yield                              |    varchar(255)     |        |               收益率 |
-| contact_phone_number               |     varchar(25)     |        |             联系方式 |
-| first_dividend_date                |    timestamp(6)     |        |           首次分红日 |
-| second_dividend_date               |    timestamp(6)     |        |         第二次分红日 |
-| client_name                        |     varchar(00)     |        |           客户联系人 |
-| client_phone_number                |     varchar(50)     |        |         客户联系电话 |
-| member_long_name                   |    varchar(255)     |        |             CRM 客户 |
-| crm_id                             |       integer       |        |                CRMID |
-| risk_level                         |    varchar(100)     |        |             风险等级 |
-| payment_date                       |    timestamp(6)     |        |             划付日期 |
-| subsidy_rate                       |       float8        |        |             补贴费率 |
-| subsidy_party                      |    varchar(255)     |        |               补贴方 |
-| create_date                        |      timestamp      |        |             创建时间 |
-| update_date                        |      timestamp      |        |             更新时间 |
+| 字段名                             |        类型         | 默认值 |                       备注 |
+| ---------------------------------- | :-----------------: | -----: | -------------------------: |
+| id                                 |       integer       |        |                       主键 |
+| product_code                       |     varchar(25)     |        |                   产品代码 |
+| product_source                     |     varchar(25)     |        |                       来源 |
+| product_description                |     varchar(50)     |        |                   产品全称 |
+| product_short_description          |     varchar(20)     |        |                   产品简称 |
+| value_date                         |      timestamp      |        |                     起息日 |
+| maturity_date                      |      timestamp      |        |                     到期日 |
+| initial_observation_date           |      timestamp      |        |                 期初观察日 |
+| initial_price_observation_rule     |    varchar(500)     |        |               期初价格描述 |
+| final_observation_date             |      timestamp      |        |                 期末观察日 |
+| end_price_observation_rule         |    varchar(500)     |        |               期末价格描述 |
+| rounding                           |       integer       |        |             标的价格精确度 |
+| fixed_interest_rate                |       float8        |        |                   固定利率 |
+| min_raise_amount                   |       float8        |        |                   募集下限 |
+| max_raise_amount                   |       float8        |        |                   募集上限 |
+| subscription_date                  |      timestamp      |        |                     认购日 |
+| redmption_date                     |      timestamp      |        |                     兑付日 |
+| underlying_instrument              |     varchar(20)     |        |                   标的名称 |
+| product_duration                   |       integer       |        |                       期限 |
+| put_call                           |     varchar(8)      |        |                       方向 |
+| option_style                       |     varchar(20)     |        |                   期权结构 |
+| participation_rate                 |       float8        |        |                     参与率 |
+| option_permium_rate                |       float8        |        |                   期权费率 |
+| buy_sell                           |     varchar(8)      |        |                   买卖方向 |
+| counterparty                       |     varchar(30)     |        |                   交易对手 |
+| participation_rate_1               |       float8        |        |                   参与率 1 |
+| strike_price_calculation_factor_1  |       float8        |        |                 执行价格 1 |
+| strike_price_calculation_method_1  |     varchar(50)     |        |        执行价格 1 匹配方式 |
+| barrier_price_calculation_factor_1 |       float8        |        |                 障碍价格 1 |
+| barrier_price_calculation_method_1 |     varchar(50)     |        |        障碍价格 1 匹配方式 |
+| knock_out_rebate_1                 |       float8        |        |                 敲出补偿 1 |
+| participation_rate_2               |       float8        |        |                   参与率 2 |
+| strike_price_calculation_factor_2  |       float8        |        |                 执行价格 2 |
+| strike_price_calculation_method_2  |     varchar(50)     |        |        执行价格 2 匹配方式 |
+| barrier_price_calculation_factor_2 |       float8        |        |                 障碍价格 2 |
+| barrier_price_calculation_method_2 |     varchar(50)     |        |        障碍价格 2 匹配方式 |
+| knock_out_rebate_2                 |       float8        |        |                 敲出补偿 2 |
+| underlying_instrument_id           |    varchar(100)     |        |                   标的代码 |
+| holder_type                        |    varchar(100)     |        |                   发行方式 |
+| actual_amount_collected            |       float8        |        |               实际募集金额 |
+| commission_rate                    |       float8        |        |                   销售费率 |
+| individual_min_subscribe_amount    |       float8        |        |             单客户认购下限 |
+| institutional_min_subscribe_amount |       float8        |        |       机构首次投资最低金额 |
+| individual_min_transfer_amount     |       float8        |        |               认购递增金额 |
+| institutional_min_transfer_amount  |       float8        |        |           机构最少追加金额 |
+| individual_max_subscribe_amount    |       float8        |        |             单客户认购上限 |
+| institutional_max_subscribe_amount |       float8        |        |           机构最高认购限额 |
+| match_option                       | character varying[] |        |                 不清楚用途 |
+| branch_name                        |    varchar(100)     |        |               分支机构名称 |
+| branch_code                        |    varchar(100)     |        |               分支机构代码 |
+| customer_name                      |    varchar(100)     |        |                   客户名称 |
+| contact_name                       |    varchar(100)     |        |                     联系人 |
+| sales_associates                   |    varchar(100)     |        |                 销售协同人 |
+| sales_name                         |    varchar(300)     |        |           分支机构预约同事 |
+| note                               |    varchar(500)     |        |                 中收备忘录 |
+| observation_duration               |    varchar(500)     |        |               价格观察区间 |
+| has_gened_csv                      |       boolean       |        |         是否生成全资产文件 |
+| initial_price                      |       float8        |        |       期初价格（没有用到） |
+| holder_type2                       |    varchar(200)     |        |                定制/非定制 |
+| istripartite                       |     varchar(20)     |        |                   发行渠道 |
+| excessallot                        |     varchar(50)     |        |             超额认申购判断 |
+| activitycode                       |    varchar(255)     |        |                   活动代码 |
+| issharewithdrawal                  |     varchar(50)     |        |               是否支持撤单 |
+| issharetransfer                    |     varchar(50)     |        |               是否支持转让 |
+| accountname                        |    varchar(200)     |        |                   账户名称 |
+| bank                               |    varchar(200)     |        |                     开户行 |
+| accountnum                         |    varchar(200)     |        |                       账号 |
+| bigpayaccountnum                   |    varchar(200)     |        |           大额支付系统行号 |
+| certificate_type                   |    varchar(200)     |        |                   证件类型 |
+| certificate_num                    |    varchar(200)     |        |                   证件号码 |
+| legal_person                       |    varchar(200)     |        |                 法定代表人 |
+| address                            |    varchar(300)     |        |                   通讯地址 |
+| email                              |    varchar(200)     |        |                   电子邮箱 |
+| capital_accountname                |    varchar(200)     |        |           资金结算账户名称 |
+| capital_accountnum                 |    varchar(200)     |        |               资金结算账号 |
+| remarks                            |    varchar(255)     |        |                       备注 |
+| yield                              |    varchar(255)     |        |                     收益率 |
+| contact_phone_number               |     varchar(25)     |        |                   联系方式 |
+| first_dividend_date                |    timestamp(6)     |        |                 首次分红日 |
+| second_dividend_date               |    timestamp(6)     |        |               第二次分红日 |
+| client_name                        |     varchar(00)     |        |                 客户联系人 |
+| client_phone_number                |     varchar(50)     |        |               客户联系电话 |
+| member_long_name                   |    varchar(255)     |        |                   CRM 客户 |
+| crm_id                             |       integer       |        |                      CRMID |
+| risk_level                         |    varchar(100)     |        |                   风险等级 |
+| payment_date                       |    timestamp(6)     |        |                   划付日期 |
+| subsidy_rate                       |       float8        |        |                   补贴费率 |
+| subsidy_party                      |    varchar(255)     |        |                     补贴方 |
+| create_date                        |      timestamp      |        |                   创建时间 |
+| update_date                        |      timestamp      |        |                   更新时间 |
+| option_id                          |    varchar(255)     |        |         期权交易确认书编号 |
+| knock_out_date                     |    timestamp(6)     |        |                   敲出日期 |
+| is_knocked                         |    varchar(255)     |        |                   是否敲出 |
+| product_status                     |    varchar(255)     |        |                   产品状态 |
+| subsidy_party                      |    varchar(255)     |        |                     补贴方 |
+| subsidy_rate                       |       float8        |        |                   补贴费率 |
+| payment_date                       |    timestamp(6)     |        |                   划付日期 |
+| float_payoff_rate                  |       float8        |        |                 浮动收益率 |
+| current_date_2                     |    varchar(255)     |        |               行情计算日期 |
+| end_price                          |       float8        |        |                   期末价格 |
+| initial_price2                     |       float8        |        |                 期初价格 2 |
+| end_price2                         |       float8        |        |                 期末价格 2 |
+| isdistinctive_quality              |     varchar(2)      |        |       含有转换期 0 否 1 是 |
+| isdistinctive_quality_start_date   |        date         |        |               转换期起始日 |
+| isback_to_sell                     |     varchar(2)      |        |     是否支持回售 0 否 1 是 |
+| back_to_sell_observation_rule      |    varchar(255)     |        |               回售价格描述 |
+| back_to_sell_min_keep_amount       |       float8        |        |           回售最低保有份额 |
+| back_to_sell_min_subscribe_amount  |       float8        |        |               单日回售下限 |
+| back_to_sell_max_subscribe_amount  |       float8        |        |               单日回售上限 |
+| back_to_sell_transfer_amount       |       float8        |        |               回售递增数量 |
+| back_to_sell_interval              |        jsonb        |        |                 回售日区间 |
+| isend_early                        |     varchar(2)      |        | 支持主动提前终止 0 否 1 是 |
+| lock_duration                      |        int4         |        |                   锁定期限 |
+| isend_early_interval               |        jsonb        |        |         主动提前终止日区间 |
+| isend_early_observation_rule       |    varchar(255)     |        |           提前终止价格描述 |
+| isend_early_min_keep_amount        |       float8        |        |       提前终止最低保有份额 |
+| isend_early_min_subscribe_amount   |       float8        |        |           提前终止数量下限 |
+| isend_early_max_subscribe_amount   |       float8        |        |           提前终止数量上限 |
+| isend_early_transfer_amount        |       float8        |        |           提前终止递增份额 |
+| min_float_payoff_rate              |       float8        |        |                 最低收益率 |
+| max_loss_protected_rate            |       float8        |        |               最高亏损保护 |
+| principal_protection_rate          |       float8        |        |               本金保障比例 |
+| knock_out_json                     |        jsonb        |        |             敲出观察日管理 |
+| knock_out_price                    |       float8        |        |                   敲出价格 |
+| knock_out_calculation_method       |    varchar(255)     |        |           敲出价格匹配方式 |
+| knock_in_json                      |        jsonb        |        |             敲入观察日管理 |
+| knock_in_calculation_method        |    varchar(255)     |        |           敲入价格匹配方式 |
+| knock_in_price                     |        jsonb        |        |                   敲入价格 |
+| knock_out_observation_rule         |    varchar(255)     |        |               敲出价格描述 |
+| knock_in_observation_rule          |    varchar(255)     |        |               敲入价格描述 |
+| is_capital                         |     varchar(2)      |        |   是否保本 1:保本,0:非保本 |
+| survival_amount_collected          |       float8        |        |                   存续份额 |
+| options_remarks                    |    varchar(255)     |        |               期权扩展信息 |
+| is_in_distinctive_quality          |     varchar(2)      |        |             是否进入转换期 |
+| knock_in_date                      |        date         |        |                   敲入日期 |
+| knock_in_observation_price         |       float8        |        |             敲入观察日价格 |
+| knock_out_observation_price        |       float8        |        |             敲出观察日价格 |
+| rounding2                          |       float8        |        |           标的价格精确度 2 |
 
 ---
 
@@ -209,17 +217,23 @@
 
 ---
 
-# liabilities_flow(现金流表---->兑付表)
+# liabilities_flow(兑付表)
 
-| 字段名           | 类型 | 默认值 |                                           备注 |
-| ---------------- | :--: | -----: | ---------------------------------------------: |
-| id               |      |        |                                           主键 |
-| flow_type        |      |        | 金额类型（bonus 分红,settle 销售，raise 兑付） |
-| product_code     |      |        |                                       产品代码 |
-| value_start_date |      |        |                                     计息开始日 |
-| value_end_date   |      |        |                                     计息结束日 |
-| payment_date     |      |        |                                       支付日期 |
-| amount           |      |        |                                           份额 |
+| 字段名                        | 类型 | 默认值 |                                           备注 |
+| ----------------------------- | :--: | -----: | ---------------------------------------------: |
+| id                            |      |        |                                           主键 |
+| flow_type                     |      |        | 金额类型（bonus 分红,settle 销售,raise 兑付） |
+| product_code                  |      |        |                                       产品代码 |
+| value_date                    |      |        |                                         起息日 |
+| actual_maturity_date          |      |        |                                     实际到期日 |
+| payment_date                  |      |        |                                   分红支付日期 |
+| amount                        |      |        |                                           份额 |
+| product_duration              |      |        |                                       实际期限 |
+| is_cash                       |      |        |                                       是否兑付 |
+| actual_redemption_date        |      |        |                                     实际兑付日 |
+| actual_final_observation_date |      |        |                                 实际最终观察日 |
+| net_value                     |      |        |                                           净值 |
+| payment_amount                |      |        |                                       兑付金额 |
 
 ---
 
@@ -244,7 +258,7 @@
 
 ---
 
-# options(衍生品交易表)
+# options(衍生品交易表-权益没有用到)
 
 | 字段名                             |     类型     |     默认值 |                   备注 |
 | ---------------------------------- | :----------: | ---------: | ---------------------: |

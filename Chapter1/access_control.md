@@ -49,6 +49,6 @@
 
 ### 表涉及的 sequence 序列
 
-1.  departments_id_seq
-2.  role_id_seq
-3.  users_id_seq
+1. departments_id_seq
+2. role_id_seq
+3. users_id_seq

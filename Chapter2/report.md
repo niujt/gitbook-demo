@@ -6,21 +6,13 @@
 
 ---
 
-# average_amount
+# report_survival(存续周报 每日 净值浮动收益率)
 
-| 字段名      | 类型 | 默认值 | 备注 |
-| ----------- | :--: | -----: | ---: |
-| id          |      |        |
-| report_date |      |        |
-| amount      |      |        |
+| 字段名            |     类型     | 默认值 |                 备注 |
+| ----------------- | :----------: | -----: | -------------------: |
+| product_code      | varchar(255) |        |             产品代码 |
+| float_payoff_rate |    float8    |        |           浮动收益率 |
+| report_date       |     date     |        | 报告日期（每天一份） |
+| net_value         |    float8    |        |                 净值 |
 
 ---
-
-# funds_data(挂钩型结构化收益凭证周报   的资金整体运作)
-
-| 字段名         | 类型 | 默认值 | 备注 |
-| -------------- | :--: | -----: | ---: |
-| id             |      |        |
-| report_date    |      |        |
-| funds_rate     |      |        |
-| funds_all_term |      |        |

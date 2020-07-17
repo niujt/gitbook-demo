@@ -21,8 +21,8 @@
 | put_call         | varchar |        |         方向 |
 | status           |  bool   |        |         状态 |
 | holder_type      | varchar |        |     发行方式 |
-| other_properties |  jsonb  |        |
-| is_divident      | varchar |        |
+| other_properties |  jsonb  |        |-|
+| is_divident      | varchar |        |-|
 | holder_type2     | varchar |        |  定制/非定制 |
 | istripartite     | varchar |        |     发行渠道 |
 
